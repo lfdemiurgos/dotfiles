@@ -123,7 +123,7 @@ skin: {
     # fg:$maroon bg:$mantle
     status_ellipsis: rgb(235, 160, 172) rgb(24, 24, 37) Bold
     # fg:$text bg:$red
-    status_error: rgb(205, 214, 244) rgb(243, 139, 168)
+    status_error: gray(22) ansi(124) 
     # fg:$maroon bg:$mantle
     status_job: rgb(235, 160, 172) rgb(40, 38, 37)
     # fg:$maroon bg:$mantle
