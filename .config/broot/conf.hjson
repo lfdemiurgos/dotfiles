@@ -109,6 +109,9 @@ show_selection_mark: true
 #  (they're otherwise not entered by broot unless selected)
 #
 special_paths: {
+    ".*": {
+        "list":"never"
+    }
 }
 
 ###############################################################

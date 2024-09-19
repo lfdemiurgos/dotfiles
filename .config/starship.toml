@@ -11,6 +11,9 @@ scan_timeout = 10
 # Disable the blank line at the start of the prompt
 add_newline = false
 
+# A continuation prompt that displays two filled-in arrows
+continuation_prompt = '''[▶](bold gray) '''
+
 # Set 'foo' as custom color palette
 palette = 'foo'
 
@@ -21,8 +24,3 @@ blue = '21'
 # Define new color
 mustard = '#af8700'
 gray = '#45475a'
-
-
-[python]
-symbol = ' '
-

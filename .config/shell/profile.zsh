@@ -4,6 +4,7 @@ alias tree='ls --tree --depth 3'
 alias py='python'
 alias hx='helix'
 alias get-token='echo $GIT_TOKEN | wl-copy'
+alias fetch='pfetch'
 
 function osc7-pwd() {
     emulate -L zsh # also sets localoptions for us
