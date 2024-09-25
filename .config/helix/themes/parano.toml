@@ -43,7 +43,7 @@ namespace = "blue"
 "ui.cursor.primary" = { fg = "dark_gray", bg = "orange" }
 "ui.cursor.match" = "orange"
 "ui.linenr" = "dark_gray"
-"ui.linenr.selected" = "gray"
+"ui.linenr.selected" = { fg = "gray", modifiers = ["bold"]}
 "ui.statusline" = { fg = "foreground", bg = "black", modifiers = ['bold', 'italic']}
 "ui.statusline.normal" = { fg = "black", bg = "blue", modifiers = ['bold', 'italic']}
 "ui.statusline.insert" = { fg = "black", bg = "orange", modifiers = ['bold', 'italic']}

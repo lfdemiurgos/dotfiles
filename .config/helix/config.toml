@@ -22,13 +22,13 @@ skip-levels = 1
 [editor.whitespace.render]
 space = "all"
 tab = "all"
-newline = "none"
+newline = "all"
 
 [editor.whitespace.characters]
 space = "·"
 nbsp = "⍽"
 tab = "→"
-newline = "⏎"
+newline = ""
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [keys.normal]
