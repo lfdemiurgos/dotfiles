@@ -1,0 +1,48 @@
+theme = "parano"
+
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+popup-border = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+character = "│"
+skip-levels = 1
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = ""
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[keys.normal]
+"C-r" = ":reload-all"
+q = "move_prev_word_start"
+Q = "move_prev_long_word_start"
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-w" = ":buffer-close"
+"A-/" = "repeat_last_motion"
+"A-x" = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[keys.select]
+"A-x" = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]

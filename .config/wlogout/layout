@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "action" : "swaylock --config ~/.config/sway/swaylock.conf",
+    "text" : "Lock",
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "Hibernate",
+}
+{
+    "label" : "logout",
+    "action" : "swaymsg exit",
+    "text" : "Exit",
+}
+{
+    "label" : "shutdown",
+    "action" : "shutdown now",
+    "text" : "Shutdown",
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "Suspend",
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+    "text" : "Reboot",
+}
