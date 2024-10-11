@@ -1,0 +1,95 @@
+# Based on the AYU theme colors from "https://github.com/dempfi/ayu"
+
+# Syntax highlighting
+type = {fg = "blue", modifiers = ["bold"] }
+"type.builtin" = {fg = "teal", modifiers = ["bold"] }
+constructor = {fg = "blue", modifiers = ["bold"] }
+constant = { fg = "magenta", modifiers = ["bold"] }
+string = "green"
+"string.regexp" = "orange"
+"string.special" = "yellow"
+comment = { fg = "gray", modifiers = ["italic"] }
+variable = "foreground"
+"variable.builtin" = { fg = "magenta", modifiers = ["bold"] }
+"variable.other" = { fg = "foreground", modifiers = ["bold"] }
+label = "orange"
+punctuation = "light_gray"
+"punctuation.special" = "foreground"
+keyword = {fg = "orange", modifiers = ["bold"]}
+operator = "orange"
+function = "yellow"
+"function.macro" = {fg = "peach", modifiers = ["bold"]}
+tag = "blue"
+namespace = "blue"
+
+"markup.heading" = "orange"
+"markup.list" = "yellow"
+"markup.bold" = { fg = "orange", modifiers = ["bold"] }
+"markup.italic" = { fg = "orange", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.raw.block" = "orange"
+"markup.link.url" = "blue"
+"markup.link.text" = "yellow"
+"markup.link.label" = "green"
+"markup.quote" = "yellow"
+
+"diff.plus" =  "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# Interface
+"ui.background"= {fg = "light_gray"}
+"ui.cursor" = { fg = "dark_gray", bg = "yellow" }
+"ui.cursor.primary" = { fg = "dark_gray", bg = "orange" }
+"ui.cursor.match" = "orange"
+"ui.linenr" = "dark_gray"
+"ui.linenr.selected" = { fg = "light_gray", modifiers = ["bold"]}
+"ui.statusline" = { fg = "foreground", bg = "black", modifiers = ['bold', 'italic']}
+"ui.statusline.normal" = { fg = "black", bg = "blue", modifiers = ['bold', 'italic']}
+"ui.statusline.insert" = { fg = "black", bg = "orange", modifiers = ['bold', 'italic']}
+"ui.statusline.select" = { fg = "black", bg = "magenta", modifiers = ['bold', 'italic']}
+"ui.cursorline" = { bg = "black" }
+"ui.popup" = { fg = "light_gray", bg = "background" }
+"ui.window" = "dark_gray"
+"ui.help" = { fg = "#7B91b3", bg = "black" }
+"ui.text" = "foreground"
+"ui.text.focus" = { bg = "dark_gray", fg = "foreground" }
+"ui.text.info" = "foreground"
+"ui.virtual.whitespace" = "gloom_gray"
+"ui.virtual.ruler" = { bg = "black" }
+"ui.virtual.inlay-hint" = { fg = "#e6b450", bg = "#302a20" }  # original bg #e6b45033
+"ui.menu" = { fg = "light_gray", bg = "background" }
+"ui.menu.selected" = { bg = "black", fg = "orange", modifiers = ["bold"]}
+"ui.selection" = { bg = "dark_gray" }
+warning = "yellow"
+error = { fg = "red", modifiers = ["bold"] }
+info = { fg = "peach", modifiers = ["bold"] }
+hint = { fg = "peach", modifiers = ["bold"] }
+"diagnostic.hint" = { underline = { color = "blue", style="curl"} }
+"diagnostic.info" = { underline = { color = "blue", style="curl"} }
+"diagnostic.warning" = { underline = { color = "yellow", style="curl"} }
+"diagnostic.error" = { underline = { color = "red", style="curl"} }
+"ui.bufferline" = { fg = "gray", bg = "background" }
+"ui.bufferline.active" = { fg = "foreground", bg = "dark_gray" }
+"ui.debug" = { fg = "orange", bg = "background" }
+"ui.highlight.frameline" = { bg = "#0067a3" }
+
+special = "orange"
+
+[palette]
+background = "#11111b"
+foreground = "#cdd6f4"
+yellow = "#ebcb8b"
+blue = "#59c2ff"
+red = "#f07178"
+cyan = "#73b8ff"
+magenta = "#d2a6ff"
+orange = "#fa8d3e"
+green = "#a6e3a1"
+teal = "#94e2d5"
+peach = "#fab387"
+light_gray = "#9399b2"
+gray = "#5c6773"
+gloom_gray = "#45475a"
+dark_gray = "#313244"
+black = "#1e1e2e"

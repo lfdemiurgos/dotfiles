@@ -1,0 +1,15 @@
+
+[[language]]
+name = "rust"
+[[language]]
+name = "rust"
+
+[language-server.rust-analyzer]
+config.checkOnSave = { command = "clippy", allTargets = false }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+

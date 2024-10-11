@@ -1,0 +1,226 @@
+#! /bin/bash
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+    set $MOD Mod4
+    set $TERM foot
+    set $MENU fuzzel
+    set $LOCK swaylock
+    set $WALLPAPER ~/Images/Wallpapers/wallpaper
+### Output configuration
+    # Wallpaper
+    output * bg $WALLPAPER fill
+
+    # Cursor Theme
+    seat seat0 xcursor_theme Bibata-Original-Classic 20
+
+    # Border pixel
+    default_border pixel 1
+
+    # Corner
+    corner_radius 2
+
+    # Blur
+    blur enable
+
+    # Inner Gaps
+    gaps inner 5
+
+    # Outer Gaps
+    gaps outer 5
+
+    # Mouse warp
+    mouse_warping container
+
+### Theme
+    set $TEXT #cdd6f4
+    set $BASE #11111b
+    set $MAIN #b4befe
+    set $IDLE #6c7086
+    set $URGE #d20f39
+    # target                 title     bg       text     indicator
+    client.focused           $MAIN     $MAIN    $BASE    $MAIN
+    client.focused_inactive  $IDLE     $BASE    $TEXT    $BASE
+    client.unfocused         $IDLE     $BASE    $TEXT    $BASE
+    client.urgent            $URGE     $URGE    $TEXT    $URGE
+
+### Input configuration
+    input type:touchpad {
+        dwt enabled
+        tap enabled
+        natural_scroll enabled
+        middle_emulation enabled
+    }
+
+    input type:keyboard {
+        xkb_layout "latam"
+        repeat_delay 250
+        repeat_rate 50
+    }
+### Key bindings
+    # Start a terminal
+    bindsym $MOD+Return exec $TERM
+
+    # Kill focused window
+    bindsym $MOD+q kill
+
+    # Start your launcher
+    bindsym $MOD+Tab exec $MENU
+
+    # Exec the ScreenLocker
+    bindsym $MOD+l exec $LOCK
+
+    # Take a Screenshot
+    bindsym Print exec slurp | grim -g - ~/Images/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').jpg
+
+    # Increase Volume
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+    
+    # Decrease Volume
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+
+    # Mute | Unmute audio source
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+    # Increase brightness
+    bindsym XF86MonBrightnessUp exec brightnessctl set 2%+
+
+    # Decrease brightness
+    bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+
+
+    # Drag floating windows by holding down $MOD and left mouse button.
+    # Resize them with right mouse button + $MOD.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $MOD normal
+
+    # Reload the configuration file
+    bindsym $MOD+Shift+r reload
+
+    # Exit sway
+    bindsym $MOD+Shift+Escape exec wlogout
+
+### Moving around:
+
+    # Or use $MOD+[up|down|left|right]
+    bindsym $MOD+Left focus left
+    bindsym $MOD+Down focus down
+    bindsym $MOD+Up focus up
+    bindsym $MOD+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $MOD+Shift+Left move left
+    bindsym $MOD+Shift+Down move down
+    bindsym $MOD+Shift+Up move up
+    bindsym $MOD+Shift+Right move right
+
+### Workspaces:
+
+    # Switch to workspace
+    bindsym $MOD+1 workspace number 1
+    bindsym $MOD+2 workspace number 2
+    bindsym $MOD+3 workspace number 3
+    bindsym $MOD+4 workspace number 4
+    bindsym $MOD+5 workspace number 5
+    bindsym $MOD+6 workspace number 6
+    bindsym $MOD+7 workspace number 7
+    bindsym $MOD+8 workspace number 8
+    bindsym $MOD+9 workspace number 9
+    bindsym $MOD+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $MOD+Shift+1 move container to workspace number 1
+    bindsym $MOD+Shift+2 move container to workspace number 2
+    bindsym $MOD+Shift+3 move container to workspace number 3
+    bindsym $MOD+Shift+4 move container to workspace number 4
+    bindsym $MOD+Shift+5 move container to workspace number 5
+    bindsym $MOD+Shift+6 move container to workspace number 6
+    bindsym $MOD+Shift+7 move container to workspace number 7
+    bindsym $MOD+Shift+8 move container to workspace number 8
+    bindsym $MOD+Shift+9 move container to workspace number 9
+    bindsym $MOD+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+### Layout stuff:
+
+    # You can "split" the current object of your focus with
+    # $MOD+b or $MOD+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $MOD+b splith
+    bindsym $MOD+v splitv
+
+    # Switch the current container between different layout styles
+    # bindsym $MOD+s layout stacking
+    # bindsym $MOD+w layout tabbed
+    # bindsym $MOD+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $MOD+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $MOD+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $MOD+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $MOD+a focus parent
+
+### Scratchpad:
+
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $MOD+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $MOD+minus scratchpad show
+
+### Resizing containers:
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $MOD+Alt+Left resize shrink width 10px
+    bindsym $MOD+Alt+Down resize grow height 10px
+    bindsym $MOD+Alt+Up resize shrink height 10px
+    bindsym $MOD+Alt+Right resize grow width 10px
+
+### Autostart
+    exec persway daemon -w \
+        --default-layout spiral
+
+    exec swayidle -w \
+        timeout 300 "$LOCK -f" \
+        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        before-sleep "$LOCK -f "
+### Start with reload
+    exec_always convert $WALLPAPER -blur 0x8 ~/.cache/sway/blurred_wallpaper
+
+### Status Bar:
+    # Read `man 5 sway-bar` for more information about this section.
+    bar {
+        font pango: JetBrainsMono Nerd Font Bold 10
+        position top
+        strip_workspace_name yes
+        status_command i3status-rs ~/.config/status.toml
+
+        colors {
+            background $BASE
+            # target           border bg     text
+            focused_workspace  $BASE  $BASE  $MAIN
+            active_workspace   $BASE  $BASE  $TEXT
+            inactive_workspace $BASE  $BASE  $IDLE
+            urgent_workspace   $BASE  $BASE  $URGE
+        }
+    }
+
+include /etc/sway/config.d/*

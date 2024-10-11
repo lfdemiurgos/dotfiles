@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "action" : "swaylock",
+    "text" : "",
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "",
+}
+{
+    "label" : "logout",
+    "action" : "swaymsg exit",
+    "text" : "",
+}
+{
+    "label" : "shutdown",
+    "action" : "shutdown now",
+    "text" : "",
+}
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : "",
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+    "text" : "",
+}
